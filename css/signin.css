@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+.signinParent{
+    background-color: rgba(243, 239, 225);
+    width: 40%;
+    border-radius: 20px;
+    position: fixed;
+    left: 40%;
+    z-index: 1000 !important;
+}
+
+.owl-carousel img{
+    height: 80vh;
+}
+@media screen and (min-width:400px) and (max-width:700px) {
+    .signinParent{
+        width: 75%;
+        left: 25%;
+    }
+}
+@media screen and (min-width:700px) and (max-width:900px) {
+    .signinParent{
+        width: 60%;
+        left: 25%;
+    }
+}
+@media screen and (max-width:400px){
+    .signinParent{
+        width: 90%;
+        left: 5%;
+        padding: 0;
+    }
+}

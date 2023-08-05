@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <title>SignUp</title>
+</head>
+<body>
+    <div class="container  mt-5  pt-4 pb-4 px-5 border border-dark border-3 signupParent">
+      <div class="headling text-center">
+        <h1 class="border-bottom border-1 border-dark pb-2 fs-2 w-50 d-inline-block">Qeydiyat</h1>
+      </div>
+      <div class="icons d-flex justify-content-center">
+        <i class="fs-3 mx-2 fa-brands fa-facebook" style="color: #2066df;"></i>
+        <i class=" fs-3 mx-2 fa-brands fa-google"></i>
+      </div>
+      <div class="d-flex px-4 mt-3">
+        <hr class="w-25 d-inline-block mx-2">
+        <p class="w-50 d-inline-block fs-5 text-secondary">ve ya e-mail vasitesi ile</p>
+        <hr class="w-25 d-inline-block">
+      </div>
+        <form>
+            <div class="d-flex justify-content-around mx-3 px-3 ">
+              <div class="mb-3  d-inline-block">
+                <label for="exampleInputEmail1" class="form-label">Ad</label>
+                <input autocomplete="off" placeholder="Ad" type="text" class="rounded-pill px-3 form-control border border-dark border-1" id="name" >
+               </div>
+              <div class="mb-3  d-inline-block mx-3">
+                <label for="exampleInputEmail1" class="form-label">Soyad</label>
+                <input autocomplete="off" placeholder="Soyad" type="text" class="rounded-pill form-control border border-dark border-1" id="surename" >
+                </div>
+            </div>
+            <div class="mb-3  mx-4">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input autocomplete="off" placeholder="Email" type="email" class="rounded-pill form-control border border-dark border-1" id="Email" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3 mx-4">
+                <label for="exampleInputEmail1" class="form-label">Mobil Nomre</label>
+                <input autocomplete="off" placeholder="Mobil nomre" type="tel" class="rounded-pill form-control border border-dark border-1" id="phone" >
+                <div id="emailHelp" class="form-text">We'll never share your phone number with anyone else.</div>
+              </div>
+              <div class="d-flex justify-content-around px-3">
+                <div class="mb-3 mx-3">
+                  <label for="exampleInputPassword1" class="form-label">Sifre</label>
+                  <input placeholder="sifre" type="password" class="rounded-pill form-control border border-dark border-1" id="Password1">
+                </div>
+                <div class="mb-3 mx-3">
+                    <label for="exampleInputPassword1" class="form-label ">Sifre tekrar</label>
+                    <input placeholder="tekrar" type="password" class="rounded-pill form-control border border-dark border-1" id="Password2">
+                  </div>
+              </div>
+            
+            <div class="mb-3 form-check mx-5">
+              <input type="checkbox" class="form-check-input" id="Check">
+              <label class="form-check-label" for="exampleCheck1">Sifreni Goster</label>
+            </div>
+            <button id="btn" type="button" class="btn btn-dark rounded-pill  px-5 float-end">Ireli<i class="mx-2 fa-solid fa-chevron-right"></i></button>
+            <a href="./signin.html" class="text-decoration-none dark btn dark mx-4">Daxil Ol</a>
+          </form>
+    </div>
+    <div class="anima">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module"  src="./js/signup1.js"></script>
+</body>
+</html>

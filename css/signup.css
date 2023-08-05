@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.signupParent{
+    background-color: rgba(243, 239, 225);
+    width: 40%;
+    border-radius: 20px;
+    position: fixed;
+    left: 40%;
+}
+@media screen and (min-width:400px) and (max-width:700px) {
+    .signupParent{
+        width: 75%;
+        left: 25%;
+    }
+}
+@media screen and (min-width:700px) and (max-width:900px) {
+    .signupParent{
+        width: 60%;
+        left: 25%;
+    }
+}
+@media screen and (max-width:400px){
+    .signupParent{
+        width: 90%;
+        left: 5%;
+        padding: 0;
+    }
+}
+
+span{
+    display: inline-block;
+    border: 1px solid white;
+    width: 10%;
+    height: 100px;
+    margin-top: -8px;
+    animation-name: spanAnimation;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    
+}
+span:hover{
+    border: 5px solid red;
+    background-color: white;
+}
+@keyframes spanAnimation{
+    from{
+        background-color:black;
+        border: 1px solid white;
+    }
+    to{
+        background-color:white;
+        border: 5px solid red;
+    }
+    
+}

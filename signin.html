@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/signin.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container  mt-5  pt-4 pb-4 px-5 border border-dark border-3 signinParent">
+        <div class="headling text-center">
+          <h1 class="border-bottom border-1 border-dark pb-2 fs-2 w-50 d-inline-block">Giris</h1>
+        </div>
+        <div class="icons d-flex justify-content-center">
+          <i class="fs-3 mx-2 fa-brands fa-facebook" style="color: #2066df;"></i>
+          <i class=" fs-3 mx-2 fa-brands fa-google"></i>
+        </div>
+        <div class="d-flex px-4 mt-3">
+          <hr class="w-25 d-inline-block mx-2">
+          <p class="w-50 d-inline-block fs-5 text-secondary">ve ya e-mail vasitesi ile</p>
+          <hr class="w-25 d-inline-block">
+        </div>
+          <form>
+              <div class="mb-3  mx-4">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input autocomplete="off" placeholder="Email" type="email" class="px-3 rounded-pill form-control border border-dark border-1" id="Email" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3 mx-3">
+                <label for="exampleInputPassword1" class="form-label">Sifre</label>
+                <input placeholder="sifre" type="password" class="px-3 rounded-pill form-control border border-dark border-1" id="Password">
+              </div>
+              
+              <div class="mb-3 form-check mx-3">
+                
+                <input type="checkbox" class="form-check-input" id="Check">
+                <label class="form-check-label" for="exampleCheck1 ">Sifreni Goster</label>
+                <a class="text-decoration-none text-dark mx-4  d-inline-block float-end" href="./forget.html">Sifreni unuttum</a>
+              </div>
+              <button id="btn" type="button" class="btn btn-dark rounded-pill  px-5 float-end">Daxil ol<i class="mx-2 fa-solid fa-chevron-right"></i></button>
+              <a href="./signup1.html" class="text-decoration-none dark btn dark mx-4">Qeydiyatdan Kec</a>
+            </form>
+      </div>
+      <div class="owl-carousel owl-theme mt-5">
+        <div class="item"><img   src="./img/signin1.webp" alt=""></div>
+        <div class="item"><img  src="./img/signin2.jpeg" alt=""></div>
+        <div class="item"><img   src="./img/signin3.jpeg" alt=""></div>
+        <div class="item"><img   src="./img/signin4.webp" alt=""></div>
+        <div class="item"><img   src="./img/signin5.jpeg" alt=""></div>
+    </div>
+</body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="owlcarousel/owl.carousel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script type="module" src="./js/signin.js"></script>
+</html>
