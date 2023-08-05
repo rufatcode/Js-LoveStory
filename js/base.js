@@ -7,3 +7,4 @@ export function CheckLocalStorage(dbName){
 export function SetLocalStorage(data,dbName){
     localStorage.setItem(dbName,JSON.stringify(data));
 }
+ 

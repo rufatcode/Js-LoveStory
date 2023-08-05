@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background-color: rgba(243, 239, 225, 0.647);
+}
+.distiribution>div{
+    background-color: rgba(243, 239, 225);
+}
+.distiribution>div i{
+    cursor: pointer;
+}

@@ -1,33 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Love-Story</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-black px-5 ">
-        <div class="container-fluid mx-5 " >
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 ">
+      <div class="container-fluid mx-5">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-3">
+              <a
+                class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                aria-current="page"
+                href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="text-white nav-link rounded-pill bg-dark border px-4 py-2"
+                href="./profile.html"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                href="./share.html"
+                >Share</a
+              >
+            </li>
+          </ul>
+          <a
+            class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+            href="./signin.html"
+            >Log Out</a
+          >
+        </div>
+      </div>
+      
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 d-none">
+        <div class="container-fluid mx-5">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item mx-3 ">
-                <a class="text-dark nav-link rounded-pill bg-white border px-4  py-2" aria-current="page" href="./index.html">Home</a>
-              </li>
               <li class="nav-item mx-3">
-                <a class="text-white nav-link rounded-pill bg-dark border px-4  py-2" href="./profile.html">Profile</a>
+                <a
+                  class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                  aria-current="page"
+                  href="#"
+                  >Logo</a
+                >
               </li>
-              <li class="nav-item mx-3">
-                <a class="text-dark nav-link rounded-pill bg-white border px-4  py-2" href="./share.html">Share</a>
-              </li>
+              
+              
             </ul>
-            <a class="text-white text-decoration-none  mx-3 rounded-pill border px-4  py-2" href="./signin.html">Log Out</a>
+            <a
+              class="text-black bg-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+              href="./signin.html"
+              >Giris</a
+            >
+            <a
+              class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+              href="./signup1.html"
+              >Qeydiyat</a
+            >
           </div>
         </div>
+        
       </nav>
+    <div class="container-fluid bg-black w-100 pt-5 pb-5 text-center">
+        <h1 class="w-25 d-inline-block text-white ">Lorem Ipsum</h1>
+        <p class="w-25 m-auto text-white mt-3 mb-4" >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ab
+          aspernatur pariatur ex accusantium suscipit et eaque neque deserunt
+          est!
+        </p>
+        <a class="text-dark text-decoration-none rounded-pill bg-white border px-4 py-2" href="./signin.html">Fotoqraf olaraq daxil ol</a>
+      </div>
+      <div class="container text-center">
+        <h2 class="w-25 m-auto mt-4 mb-4">Ən çox baxılan şəkillər</h2>
+        <button class="border-2 border-dark rounded-pill border px-4 py-2 cursor-pointer">Toy çəkilişləri</button>
+        <button class="border-2 border-dark rounded-pill border px-4 py-2">Love story</button>
+        <button class="border-2 border-dark rounded-pill border px-4 py-2">Ailəvi çəkilişlər</button>
+        <button class="border-2 border-dark rounded-pill border px-4 py-2">Portret</button>
+        <button class="border-2 border-dark rounded-pill border px-4 py-2">Ad günü</button>
+      </div>
+      <div class="container distiribution  row d-flex justify-content-evenly  flex-wrap m-auto">
+        <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-auto my-4 rounded-4 border-2 border-black" style="width: 18rem;">
+            <img src="./img/forget1.webp" class="card-img-top rounded-4 " alt="...">
+            <div class="d-flex justify-content-between px-4">
+                <span class=" "><i class="fa-regular fa-heart"></i>300</span>
+                <span class=""><i class="fa-solid fa-download"></i>50</span>
+            </div>
+            
+            <div class="card-body">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, delectus.</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+          </div>
+          
+          
+          
+          
+          
+      </div>
     <script src="./js/script.js"></script>
-</body>
+  </body>
 </html>
