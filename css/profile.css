@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background-color: antiquewhite;
+}
+nav i{
+    cursor: pointer;
+    display: none !important;
+}
+@media screen and (max-width:990px) {
+    nav>div>div{
+        display: flex !important ;
+        
+    }
+    nav i{
+        display: block !important;
+    }
+    #nav1>div>div #firstUl li{
+        margin-bottom: 15px;
+    }
+    #nav1>div>div #firstUl {
+        display: none ; 
+    }
+    #nav2>div>div>#secondUl{
+        text-align: center;
+        display: none;
+    }
+    #nav2>div>div>#secondUl>li:last-child{
+        margin-top: 20px;
+    }
+}
+header button{
+    width: 180px;
+}
+header{
+    cursor: pointer;
+}
+header form input{
+    width: 300px !important;
+}
+
+.display-none{
+    display: none;
+}
+.display-visible{
+    display: flex !important;
+}
+.changeWidth{
+    width: 80% !important;
+}

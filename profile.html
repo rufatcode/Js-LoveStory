@@ -1,15 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/profile.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
     <title>Profile</title>
-</head>
-<body>
-    <script src="./js/profile.js"></script>
-</body>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4" id="nav1">
+      <div class="container-fluid mx-5">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <i class="fa-solid fa-bars text-white fs-3" id="bar1"></i>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="firstUl">
+            <li class="nav-item mx-3">
+              <a
+                class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                aria-current="page"
+                href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="text-white nav-link rounded-pill bg-dark border px-4 py-2"
+                href="./profile.html"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                href="./share.html"
+                >Share</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+                href="./signin.html"
+                >Log Out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav
+      class="navbar navbar-expand-lg bg-black px-5 pt-4 naviqation1 d-none"
+      id="nav2"
+    >
+      <div class="container-fluid mx-5">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-3">
+              <a
+                class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                aria-current="page"
+                href="#"
+                >Logo</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0" id="secondUl">
+            <li class="nav-item">
+              <a
+                class="text-black bg-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+                href="./signin.html"
+                >Giris</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+                href="./signup1.html"
+                >Qeydiyat</a
+              >
+            </li>
+          </ul>
+
+          <i class="fa-solid fa-bars text-white fs-3" id="bar2"></i>
+        </div>
+      </div>
+    </nav>
+    
+    <header >
+        <h1 class=" m-auto  d-flex justify-content-center align-items-center">Logo</h1>
+        <div id="profileInfo" class="w-75 m-auto mt-5 d-flex justify-content-center">
+            <div class="">
+                <img id="profilePicture"
+                  width="150"
+                  height="150"
+                  class="rounded-circle"
+                  src="./img/default.jpeg"
+                  alt=""
+                />
+              </div>
+              <div class="mx-4 w-50">
+                <h2 id="user-name">Lorem ipsum</h2>
+                <p id="position"><i class="fa-solid fa-camera mx-2"></i><span>Fotograf</span></p>
+                <p id="practice"><i class="fa-regular fa-clock mx-2"></i><span>1-3 il</span></p>
+                <p id="about">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ab
+                  veritatis reiciendis aliquam iusto. Unde ipsa dolor asperiores
+                  distinctio nemo.
+                </p>
+              </div>
+              <div>
+                <button id="btn" class="rounded-pill bg-black text-white px-5 py-2 d-block">Redaktə et</button>
+                <span class=" my-2 d-inline-block">
+                    <i class="fa-solid fa-star" style="color: orange;"></i>
+                    <i class="fa-solid fa-star" style="color: orange;"></i>
+                    <i class="fa-solid fa-star" style="color: orange;"></i>
+                    <i class="fa-solid fa-star" style="color: orange;"></i>
+                    <i class="fa-solid fa-star" style="color: orange;"></i>
+                    5.0
+                </span>
+                <p id="email">loremipsum@gmail.com</p>
+                <p id="phone">(+994) 258 25 35</p>
+                <a  id="link" class="  text-dark" href="" target="_blank">linktowebsite</a>
+              </div>
+        </div>
+      
+      <div id="edit" class="w-75 m-auto mt-5 d-flex justify-content-center d-none">
+        <div>
+            <input  type="file" hidden>
+            <img id="demoImg"
+            width="150"
+            height="150"
+            class="rounded-circle " src="./img/default.jpeg " alt="">
+            
+                
+        </div>
+        <div>
+            <form>
+                <div class="mb-3  mx-4">
+                    <label for="exampleInputEmail1" class="form-label">Ad</label>
+                    <input autocomplete="off" placeholder="Ad" type="text" class="rounded-pill form-control border border-dark border-1" id="nameInput" aria-describedby="emailHelp">
+                   </div>
+                  <div class="mb-3  mx-4">
+                    <label for="exampleInputEmail1" class="form-label">Soyad</label>
+                    <input autocomplete="off" placeholder="Soyad" type="text" class="rounded-pill form-control border border-dark border-1" id="surenameInput" aria-describedby="emailHelp">
+                   </div>
+                <div class="mb-3  mx-4">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input autocomplete="off" placeholder="Email" type="email" class="rounded-pill form-control border border-dark border-1" id="EmailInput" aria-describedby="emailHelp">
+                 </div>
+                 <div class="mb-3 mx-3">
+                    <label for="exampleInputPassword1" class="form-label ">Movqe</label>
+                    <select id="selectionInput" class="px-4 rounded-pill form-select border border-dark border-1" aria-label="Default select example">
+                        <option value="Fotograf">Fotograf</option>
+                        <option value="Videograf">Videograf</option>
+                    </select>
+                </div>
+                  <div class="mb-3 mx-3 ">
+                      <label for="exampleInputPassword1" class="form-label ">Tecrube</label>
+                      <select  id="practiceInput" class="px-4 rounded-pill form-select border border-dark border-1" aria-label="Default select example">
+                        <option value="0">0</option> 
+                        <option value="0-6 ay">0-6 ay</option> 
+                        <option value="6ay-1il">6ay-1il</option>
+                        <option value="1-3il">1-3il</option>
+                        <option value="3 ilden cox">3 ilden cox</option>
+                    </select>
+                    </div>
+                <div class="mb-3 mx-4">
+                    <label for="exampleInputEmail1" class="form-label">Mobil Nomre</label>
+                    <input autocomplete="off" placeholder="Mobil nomre" type="tel" class="rounded-pill form-control border border-dark border-1" id="phoneInput" >
+                    </div>
+                  <div class="d-flex justify-content-around px-3">
+                    <div class="mb-3 mx-3">
+                      <label for="exampleInputPassword1" class="form-label">Web səhifə linki</label>
+                      <input placeholder="Web səhifə linki" type="url" class="rounded-pill form-control border border-dark border-1" id="linkInput">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-around px-3">
+                    <div class="mb-3 mx-3">
+                      <label for="exampleInputPassword1" class="form-label">Haqqinda</label>
+                      <textarea cols="30" rows="10" placeholder="Haqqinda" type="text" class="rounded form-control border border-dark border-1" id="aboutInput">
+                        </textarea>
+                    </div>
+                  </div>
+                
+                <button id="editBtn" type="button" class="btn btn-dark rounded-pill  px-5 float-end">Təsdiq et</button>
+              </form>
+        </div>
+      </div>
+    </header>
+    <script type="module" src="./js/profile.js"></script>
+  </body>
 </html>

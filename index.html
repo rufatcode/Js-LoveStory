@@ -17,10 +17,12 @@
     <title>Love-Story</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 ">
+    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 " id="nav1">
       <div class="container-fluid mx-5">
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <i class=" fa-solid fa-bars text-white  fs-3 " id="bar1"></i>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="firstUl">
             <li class="nav-item mx-3">
               <a
                 class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
@@ -29,7 +31,7 @@
                 >Home</a
               >
             </li>
-            <li class="nav-item mx-3">
+            <li class="nav-item mx-3 ">
               <a
                 class="text-white nav-link rounded-pill bg-dark border px-4 py-2"
                 href="./profile.html"
@@ -44,16 +46,22 @@
               >
             </li>
           </ul>
-          <a
-            class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
-            href="./signin.html"
-            >Log Out</a
-          >
+          <ul class="navbar-nav  mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a
+              class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+              href="./signin.html"
+              >Log Out</a
+            >
+            </li>
+            </ul>
+         
         </div>
       </div>
       
     </nav>
-    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 d-none">
+    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 naviqation1 d-none" id="nav2">
+      
         <div class="container-fluid mx-5">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -68,17 +76,27 @@
               
               
             </ul>
-            <a
+            <ul class="navbar-nav  mb-2 mb-lg-0" id="secondUl">
+              <li class="nav-item ">
+                <a
               class="text-black bg-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
               href="./signin.html"
               >Giris</a
             >
-            <a
-              class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
-              href="./signup1.html"
-              >Qeydiyat</a
-            >
+              </li>
+              <li class="nav-item ">
+                <a
+                class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2 "
+                href="./signup1.html"
+                >Qeydiyat</a
+              >
+              </li>
+            </ul>
+            
+           
+            <i class=" fa-solid fa-bars text-white  fs-3 " id="bar2"></i>
           </div>
+         
         </div>
         
       </nav>
@@ -100,11 +118,19 @@
         <button class="border-2 border-dark rounded-pill border px-4 py-2">Ad günü</button>
       </div>
       <div class="container distiribution  row d-flex justify-content-evenly  flex-wrap m-auto">
-        <div class="card col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 m-auto my-4 rounded-4 border-2 border-black" style="width: 18rem;">
-            <img src="./img/forget1.webp" class="card-img-top rounded-4 " alt="...">
+        <div class="card  my-4 rounded-4 border-2 border-black" style="width: 22rem;">
+          <div>
+            <img class="rounded-circle " width="50" height="50" src="./img/forget1.webp" alt="">
+            <h1 class=" d-inline-block fs-6 mt-3 ">
+              <p class=" mb-1 " >Ad</p>
+              <p class="">Baki,Azerbaycan</p>
+            </h1>
+            <h3 class=" fs-6 d-inline-block ">Qiymet 50 Azn</h3>
+          </div>
+            <img src="./img/forget1.webp" class="card-img-top rounded-4 mb-3 border border-1 border-black" alt="...">
             <div class="d-flex justify-content-between px-4">
-                <span class=" "><i class="fa-regular fa-heart"></i>300</span>
-                <span class=""><i class="fa-solid fa-download"></i>50</span>
+                <span class=" "><i class="fa-regular fa-heart mx-1"></i>300</span>
+                <span class=""><i class="fa-solid fa-download mx-1"></i>50</span>
             </div>
             
             <div class="card-body">
@@ -118,6 +144,20 @@
           
           
       </div>
+      <footer class=" d-flex w-100 bg-black pt-5 pb-5 justify-content-center align-items-center">
+        <div class=" w-25 text-center">
+          <h1 class="text-white">Logo</h1>
+        </div>
+        <div class=" w-25 text-center">
+          <h2 class="text-white mb-4">About Us</h2>
+          <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab</p>
+        </div>
+        <div class=" w-25 text-center">
+          <h2 class="text-white mb-4">Contact Us</h2>
+          <a href="tel:" class="text-decoration-none d-block text-white mb-3"><i class="fa-solid fa-phone mx-2"></i>Lorem Ipsum</a>
+          <a href="mailto:"class="text-decoration-none d-block text-white"><i class="fa-solid fa-envelope mx-2"></i>Lorem Ipsum</a>
+        </div>
+      </footer>
     <script src="./js/script.js"></script>
   </body>
 </html>

@@ -9,7 +9,49 @@ body{
 }
 .distiribution>div{
     background-color: rgba(243, 239, 225);
+
+}
+
+nav i{
+    cursor: pointer;
+    display: none !important;
 }
 .distiribution>div i{
     cursor: pointer;
+}
+.distiribution>div>div p{
+    font-size: 13px !important;
+}
+.distiribution>div>div h3{
+    font-size: 13px !important;
+    float: right;
+    margin-top: 25px;
+}
+@media screen and (max-width:990px) {
+    nav>div>div{
+        display: flex !important ;
+        
+    }
+    nav i{
+        display: block !important;
+    }
+    #nav1>div>div #firstUl li{
+        margin-bottom: 15px;
+    }
+    #nav1>div>div #firstUl {
+        display: none ; 
+    }
+    #nav2>div>div>#secondUl{
+        text-align: center;
+        display: none;
+    }
+    #nav2>div>div>#secondUl>li:last-child{
+        margin-top: 20px;
+    }
+}
+.display-none{
+    display: none;
+}
+.display-visible{
+    display: flex !important;
 }
