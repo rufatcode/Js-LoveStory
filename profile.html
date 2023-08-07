@@ -16,7 +16,7 @@
     <title>Profile</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4" id="nav1">
+    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 pb-4" id="nav1">
       <div class="container-fluid mx-5">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <i class="fa-solid fa-bars text-white fs-3" id="bar1"></i>
@@ -177,25 +177,83 @@
                     <label for="exampleInputEmail1" class="form-label">Mobil Nomre</label>
                     <input autocomplete="off" placeholder="Mobil nomre" type="tel" class="rounded-pill form-control border border-dark border-1" id="phoneInput" >
                     </div>
-                  <div class="d-flex justify-content-around px-3">
                     <div class="mb-3 mx-3">
                       <label for="exampleInputPassword1" class="form-label">Web səhifə linki</label>
-                      <input placeholder="Web səhifə linki" type="url" class="rounded-pill form-control border border-dark border-1" id="linkInput">
-                    </div>
+                      <input autocomplete="off" placeholder="Web səhifə linki" type="url" class="rounded-pill form-control border border-dark border-1" id="linkInput">
+                    
                   </div>
-                  <div class="d-flex justify-content-around px-3">
                     <div class="mb-3 mx-3">
                       <label for="exampleInputPassword1" class="form-label">Haqqinda</label>
-                      <textarea cols="30" rows="10" placeholder="Haqqinda" type="text" class="rounded form-control border border-dark border-1" id="aboutInput">
+                      <textarea cols="30" rows="10" placeholder="Haqqinda" class="rounded form-control border border-dark border-1" id="aboutInput">
                         </textarea>
                     </div>
-                  </div>
                 
                 <button id="editBtn" type="button" class="btn btn-dark rounded-pill  px-5 float-end">Təsdiq et</button>
               </form>
         </div>
       </div>
     </header>
+    <section id="profileSection">
+      <div class="container w-75 m-auto mt-5">
+        <div class="button w-50 m-auto d-flex justify-content-between">
+          <span id="imageBtn" class="fs-3">
+            <i class="fa-brands fa-gratipay mx-2 "></i> Şəkillər
+          </span>
+          <span id="imageSave" class=" fs-3">
+            <i class="fa-solid fa-bookmark mx-2 "></i>Yadda saxla
+          </span>
+        </div>
+       
+      </div>
+      <div id="likeContent" class="container likeContent  row d-flex justify-content-evenly  flex-wrap m-auto">
+        <div class="card  my-4 rounded-4 border-2 border-black" style="width: 22rem;">
+          
+            <img src="./img/forget1.webp" class="card-img-top rounded-4 mb-3 border border-1 border-black mt-2" alt="...">
+            <div class="d-flex justify-content-between px-4">
+                <span class=" "><i class="fa-regular fa-heart mx-1"></i>300</span>
+                <span class=""><i class="fa-solid fa-download mx-1"></i>50</span>
+            </div>
+            
+            <div class="card-body">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, delectus.</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+          </div>
+          
+          
+          
+          
+          
+      </div>
+      <div id="saveContent" class="container saveContent  row d-flex justify-content-evenly  flex-wrap m-auto d-none">
+        <div class="card  my-4 rounded-4 border-2 border-black" style="width: 22rem;">
+          <div>
+            <img class="rounded-circle " width="50" height="50" src="./img/forget1.webp" alt="">
+            <h1 class=" d-inline-block fs-6 mt-3 ">
+              <p class=" mb-1 " >Ad</p>
+              <p class="">Baki,Azerbaycan</p>
+            </h1>
+            <h3 class=" fs-6 d-inline-block ">Qiymet 50 Azn</h3>
+          </div>
+            <img src="./img/forget1.webp" class="card-img-top rounded-4 mb-3 border border-1 border-black" alt="...">
+            <div class="d-flex justify-content-between px-4">
+                <span class=" "><i class="fa-regular fa-heart mx-1"></i>300</span>
+                <span class=""><i class="fa-solid fa-download mx-1"></i>50</span>
+            </div>
+            
+            <div class="card-body">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, delectus.</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+          </div>
+          
+          
+          
+          
+          
+      </div>
+    </section>
+    
     <script type="module" src="./js/profile.js"></script>
   </body>
 </html>

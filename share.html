@@ -10,6 +10,128 @@
     <title>Share Page</title>
 </head>
 <body>
-    <script src="./js/share.js"></script>
+    <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 pb-4" id="nav1">
+        <div class="container-fluid mx-5">
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <i class=" fa-solid fa-bars text-white  fs-3 " id="bar1"></i>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="firstUl">
+              <li class="nav-item mx-3">
+                <a
+                  class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                  aria-current="page"
+                  href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item mx-3 ">
+                <a
+                  class="text-white nav-link rounded-pill bg-dark border px-4 py-2"
+                  href="./profile.html"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item mx-3">
+                <a
+                  class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                  href="./share.html"
+                  >Share</a
+                >
+              </li>
+            </ul>
+            <ul class="navbar-nav  mb-2 mb-lg-0">
+              <li class="nav-item ">
+                <a
+                class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+                href="./signin.html"
+                >Log Out</a
+              >
+              </li>
+              </ul>
+           
+          </div>
+        </div>
+        
+      </nav>
+      <nav class="navbar navbar-expand-lg bg-black px-5 pt-4 naviqation1 d-none" id="nav2">
+        
+          <div class="container-fluid mx-5">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-3">
+                  <a
+                    class="text-dark nav-link rounded-pill bg-white border px-4 py-2"
+                    aria-current="page"
+                    href="#"
+                    >Logo</a
+                  >
+                </li>
+                
+                
+              </ul>
+              <ul class="navbar-nav  mb-2 mb-lg-0" id="secondUl">
+                <li class="nav-item ">
+                  <a
+                class="text-black bg-white text-decoration-none mx-3 rounded-pill border px-4 py-2"
+                href="./signin.html"
+                >Giris</a
+              >
+                </li>
+                <li class="nav-item ">
+                  <a
+                  class="text-white text-decoration-none mx-3 rounded-pill border px-4 py-2 "
+                  href="./signup1.html"
+                  >Qeydiyat</a
+                >
+                </li>
+              </ul>
+              
+             
+              <i class=" fa-solid fa-bars text-white  fs-3 " id="bar2"></i>
+            </div>
+           
+          </div>
+          
+        </nav>
+        <div id="Share" class="w-75 m-auto mt-5 d-flex justify-content-center ">
+            <div class=" text-center">
+                <input  type="file" hidden>
+                <div id="demoImg" class=" text-center border rounded border-2 border-black py-5 px-5 mt-5 mx-5">
+                    <h2 class=" mt-5 mb-4">Faylı çək və buraya sürüklə</h2>
+                    <p>və ya</p>
+                    <button class=" bg-black rounded-pill text-white px-4 py-2 mb-5 mt-3"><i class="fa-solid fa-plus border border-2 border-white  mx-2"></i>Fayl yüklə</button>
+                </div>
+                <h4 class=" my-3 ">.jpg, .png, ... sonluqlu fayllar dəstəklənir</h4>
+                <p>maksimum fayl ölçüsü 50MB olmalıdır</p>
+                    
+            </div>
+            <div>
+                <form>
+                    <div class="mb-3  mx-4">
+                        <label for="exampleInputEmail1" class="form-label">Qiymet</label>
+                        <input autocomplete="off" placeholder="Qiymet" type="text" class="rounded-pill form-control border border-dark border-1" id="priceInput" aria-describedby="emailHelp">
+                       </div>
+                      <div class="mb-3  mx-4">
+                        <label for="exampleInputEmail1" class="form-label">Yer</label>
+                        <input autocomplete="off" placeholder="Yer" type="text" class="rounded-pill form-control border border-dark border-1" id="locationInput" aria-describedby="emailHelp">
+                       </div>
+                        <div class="mb-3 mx-3">
+                          <label for="exampleInputPassword1" class="form-label">Tag et</label>
+                          <textarea  cols="30" rows="2"  type="text" class="rounded form-control border border-dark border-1" id="tagInput">
+                        </textarea>  
+                        </div>
+                        <div class="mb-3 mx-3">
+                          <label for="exampleInputPassword1" class="form-label fs-4">Şəklin təsviri</label>
+                          <label  for="exampleInputPassword1" class="form-label d-block fs-6">(min 50 söz daxil edin)</label>
+                          <textarea  cols="30" rows="10"  type="text" class="rounded form-control border border-dark border-1" id="describtionInput">
+                            </textarea>
+                        </div>
+                    
+                    <button id="shareBtn" type="button" class="btn btn-dark rounded-pill  px-5 float-end">Paylas</button>
+                  </form>
+            </div>
+          </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./js/share.js"></script>
 </body>
 </html>

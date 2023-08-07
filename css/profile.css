@@ -5,7 +5,7 @@
     text-decoration: none;
 }
 body{
-    background-color: antiquewhite;
+    background-color: rgba(243, 239, 225, 0.647);
 }
 nav i{
     cursor: pointer;
@@ -36,10 +36,8 @@ nav i{
 header button{
     width: 180px;
 }
-header{
-    cursor: pointer;
-}
-header form input{
+
+header form input,select{
     width: 300px !important;
 }
 
@@ -51,4 +49,42 @@ header form input{
 }
 .changeWidth{
     width: 80% !important;
+}
+
+.likeContent>div{
+    background-color: rgba(243, 239, 225);
+
+}
+
+.button span{
+    cursor: pointer;
+}
+.distirlikeContentibution>div i{
+    cursor: pointer;
+}
+.likeContent>div>div p{
+    font-size: 13px !important;
+}
+.likeContent>div>div h3{
+    font-size: 13px !important;
+    float: right;
+    margin-top: 25px;
+}
+
+.saveContent>div{
+    background-color: rgba(243, 239, 225);
+
+}
+
+
+.saveContent>div i{
+    cursor: pointer;
+}
+.saveContent>div>div p{
+    font-size: 13px !important;
+}
+.saveContent>div>div h3{
+    font-size: 13px !important;
+    float: right;
+    margin-top: 25px;
 }

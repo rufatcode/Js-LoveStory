@@ -28,6 +28,7 @@ bar2.addEventListener("click",()=>{
         }
     }
 })
+
 let userName=document.getElementById("user-name");
 let position=document.getElementById("position");
 let practice=document.getElementById("practice");
@@ -38,7 +39,12 @@ let phone=document.getElementById("phone");
 let link=document.getElementById("link");
 let profileInfoDiv=document.getElementById("profileInfo");
 let editDiv=document.getElementById("edit");
-
+let profilePicture=document.getElementById("profilePicture");
+let profileSection=document.getElementById("profileSection");
+let demoImg=document.getElementById("demoImg");
+if(window.screen.availWidth<600){
+    editDiv.classList.remove("d-flex","justify-content-center");
+}
 for (let i = 0; i < dbSignUp.length; i++) {
     if (dbSignUp[i].Email==dbsignIn[dbsignIn.length-1].Email&&dbSignUp[i].Password==dbsignIn[dbsignIn.length-1].Password) {
         userName.innerText=dbSignUp[i].Name+" "+dbSignUp[i].SureName;
@@ -59,10 +65,15 @@ for (let i = 0; i < dbSignUp.length; i++) {
         else{
             about.innerText=dbSignUp[i].about;
         }
+        if (dbSignUp[i].image!=undefined) {
+            profilePicture.setAttribute("src",dbSignUp[i].image)
+            demoImg.setAttribute("src",dbSignUp[i].image)
+        }
     }
 }
 btn.addEventListener("click",()=>{
     profileInfoDiv.classList.add("d-none");
+    profileSection.classList.add("d-none")
     editDiv.classList.remove("d-none");
 
 })
@@ -77,8 +88,6 @@ let phoneInput=document.getElementById("phoneInput");
 let linkInput=document.getElementById("linkInput");
 let aboutInput=document.getElementById("aboutInput");
 let editBtn=document.getElementById("editBtn");
-let profilePicture=document.getElementById("profilePicture");
-let demoImg=document.getElementById("demoImg");
 let arr=[nameInput,surenameInput,EmailInput,selectionInput,practiceInput,phoneInput,linkInput,aboutInput];
 if(window.screen.availWidth<500){
     editDiv.classList.remove("d-flex","justify-content-center");
@@ -99,13 +108,31 @@ demoImg.addEventListener("click",()=>{
                     dbSignUp[i].image=e.target.result;
                 }
             }
-            
+            SetLocalStorage(dbSignUp,"signUp");
         }
-        SetLocalStorage(dbSignUp,"signUp");
+        
         filereader.readAsDataURL(e.target.files[0])
     })
     
 })
+demoImg.ondragover=function(e){
+    e.preventDefault();
+}
+demoImg.ondrop=function(e){
+    e.preventDefault();
+    let filereader=new FileReader();
+        filereader.onload=function(e){
+            for (let i = 0; i < dbSignUp.length; i++) {
+                if (dbSignUp[i].Email==dbsignIn[dbsignIn.length-1].Email&&dbSignUp[i].Password==dbsignIn[dbsignIn.length-1].Password) {
+                    demoImg.setAttribute("src",e.target.result);
+                    dbSignUp[i].image=e.target.result;
+                }
+            }
+            SetLocalStorage(dbSignUp,"signUp");
+        }
+        
+        filereader.readAsDataURL(e.dataTransfer.files[0])
+}
 
 editBtn.addEventListener("click",()=>{
     for (let i = 0; i < dbSignUp.length; i++) {
@@ -131,7 +158,7 @@ editBtn.addEventListener("click",()=>{
             if (linkInput.value!="") {
                 dbSignUp[i].link=linkInput.value;
             }
-            if (aboutInput.value!="") {
+            if (aboutInput.value.trim()!="") {
                 dbSignUp[i].about=aboutInput.value;
             }
             
@@ -141,4 +168,18 @@ editBtn.addEventListener("click",()=>{
     profileInfoDiv.classList.remove("d-none");
     editDiv.classList.add("d-none");
     window.location.replace("../signin.html");
+})
+
+let likeContent=document.getElementById("likeContent");
+let saveContent=document.getElementById("saveContent");
+let imageSave=document.getElementById("imageSave");
+let imageBtn=document.getElementById("imageBtn");
+
+imageSave.addEventListener("click",()=>{
+    saveContent.classList.remove("d-none");
+    likeContent.classList.add("d-none");
+})
+imageBtn.addEventListener("click",()=>{
+    saveContent.classList.add("d-none");
+    likeContent.classList.remove("d-none");
 })
