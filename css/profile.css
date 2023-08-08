@@ -11,6 +11,9 @@ nav i{
     cursor: pointer;
     display: none !important;
 }
+i{
+    cursor: pointer;
+}
 @media screen and (max-width:990px) {
     nav>div>div{
         display: flex !important ;

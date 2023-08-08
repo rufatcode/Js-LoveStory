@@ -32,12 +32,14 @@ for (let i = 0; i < dbShare.length; i++) {
     let cardDiv=document.createElement("div");
     cardDiv.classList.add("card","my-4","rounded-4","border-2","border-black");
     cardDiv.style.width="22rem";
+    cardDiv.style.maxHeight="550px";
+    cardDiv.style.overflowY= "scroll";
     let InfoDiv=document.createElement("div");
     let profileImage=document.createElement("img");
     profileImage.classList.add("rounded-circle");
     profileImage.style.width="50px";
     profileImage.style.height="50px";
-    profileImage.setAttribute("src",dbShare[i].ProfileImage);
+    profileImage.setAttribute("src",dbShare[i].ProfileImage!=undefined?dbShare[i].ProfileImage:"../img/default.jpeg");
     let headInfo=document.createElement("h1");
     headInfo.classList.add("d-inline-block","fs-6","mt-3","px-3")
     let nameParagraf=document.createElement("p");
@@ -62,7 +64,19 @@ for (let i = 0; i < dbShare.length; i++) {
     likeAndSaveDiv.classList.add("d-flex","justify-content-between","px-4");
     
     let likeSpan=document.createElement("span");
-    likeSpan.innerHTML='<i class="fa-regular fa-heart mx-1">';
+    let likeIcon=document.createElement("i");
+    likeIcon.addEventListener("click",()=>{
+        if (dbShare[i].LikeClass=="text-dark") {
+            dbShare[i].LikeClass="text-danger";
+            dbShare[i].LikeCount+=1;
+            SetLocalStorage(dbShare,"Share");
+            window.location.reload();
+        }
+        
+    })
+    
+    likeIcon.classList.add("fa-solid","fa-heart","mx-1",dbShare[i].LikeClass);
+    likeSpan.append(likeIcon);
     let likeCountSpan=document.createElement("span");
     likeCountSpan.innerText=dbShare[i].LikeCount;
     likeSpan.append(likeCountSpan);
@@ -101,7 +115,10 @@ for (let i = 0; i < dbSignUp.length; i++) {
     }
 }
 let headInfoParagraf=document.querySelector("#headInfo p");
-console.log(user);
 headInfoParagraf.innerText=user.about;
-
+document.querySelector("#headInfo h1").innerText=user.Name+" "+user.SureName;
 document.querySelector("footer p").innerText=user.about;
+document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.setAttribute("href",`tel:${user.Phone}`);
+document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.setAttribute("href",`tel:${user.Email}`);
+document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.innerText="+994"+user.Phone;
+document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerText=user.Email;

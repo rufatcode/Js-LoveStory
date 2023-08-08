@@ -17,6 +17,7 @@ body{
     .signupParent{
         width: 75%;
         left: 25%;
+        top: -10%;
     }
 }
 @media screen and (min-width:700px) and (max-width:900px) {
@@ -29,6 +30,7 @@ body{
     .signupParent{
         width: 90%;
         left: 5%;
+        top: -10%;
         padding: 0;
     }
 }

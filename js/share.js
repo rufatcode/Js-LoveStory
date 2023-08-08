@@ -78,13 +78,15 @@ shareBtn.addEventListener("click",function(){
     }
     Share.Name=user.Name+" "+user.SureName,
     Share.UserEmail=user.Email,
-    Share.ProfileImage=user.image,
+    Share.ProfileImage=user.image!=null?user.image:"../img/default.jpeg",
     Share.imagePrice="Qiymet "+priceInput.value,
     Share.Location=locationInput.value,
     Share.Tag=tagInput.value,
     Share.Description=describtionInput.value,
     Share.LikeCount=0,
     Share.SaveCount=0,
+    Share.LikeClass="text-dark",
+    Share.SaveClass="text-dark",
 
     dbShare.push(Share);
     SetLocalStorage(dbShare,"Share");

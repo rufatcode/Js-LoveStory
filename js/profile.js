@@ -96,7 +96,7 @@ if(window.screen.availWidth<500){
         editBtn.style.marginRight="20px"
     }
 }
-
+let dbShare=CheckLocalStorage("Share");
 demoImg.addEventListener("click",()=>{
     demoImg.previousElementSibling.click();
     demoImg.previousElementSibling.addEventListener("change",function(e){
@@ -106,9 +106,19 @@ demoImg.addEventListener("click",()=>{
                 if (dbSignUp[i].Email==dbsignIn[dbsignIn.length-1].Email&&dbSignUp[i].Password==dbsignIn[dbsignIn.length-1].Password) {
                     demoImg.setAttribute("src",e.target.result);
                     dbSignUp[i].image=e.target.result;
+                    for (let j = 0; j < dbShare.length; j++) {
+                        if (dbShare[j].UserEmail==dbSignUp[i].Email) {
+                            dbShare[j].ProfileImage=e.target.result;
+                            console.log(dbShare[j]);
+                            
+                        }
+                    }
                 }
+                
             }
+           
             SetLocalStorage(dbSignUp,"signUp");
+            SetLocalStorage(dbShare,"Share");
         }
         
         filereader.readAsDataURL(e.target.files[0])
@@ -126,9 +136,17 @@ demoImg.ondrop=function(e){
                 if (dbSignUp[i].Email==dbsignIn[dbsignIn.length-1].Email&&dbSignUp[i].Password==dbsignIn[dbsignIn.length-1].Password) {
                     demoImg.setAttribute("src",e.target.result);
                     dbSignUp[i].image=e.target.result;
+                    for (let j = 0; j < dbShare.length; j++) {
+                        if (dbShare[j].UserEmail==dbSignUp[i].Email) {
+                            dbShare[j].ProfileImage=e.target.result;
+                            
+                        }
+                    }
                 }
+                
             }
             SetLocalStorage(dbSignUp,"signUp");
+            SetLocalStorage(dbShare,"Share");
         }
         
         filereader.readAsDataURL(e.dataTransfer.files[0])
@@ -183,3 +201,80 @@ imageBtn.addEventListener("click",()=>{
     saveContent.classList.add("d-none");
     likeContent.classList.remove("d-none");
 })
+
+for (let i = 0; i < dbShare.length; i++) {
+    if (dbShare[i].UserEmail==dbsignIn[dbsignIn.length-1].Email) {
+        let cardDiv=document.createElement("div");
+        cardDiv.classList.add("card","my-4","rounded-4","border-2","border-black");
+        cardDiv.style.width="22rem";
+        cardDiv.style.maxHeight="550px";
+        cardDiv.style.overflowY= "scroll";
+        let InfoDiv=document.createElement("div");
+        let profileImage=document.createElement("img");
+        profileImage.classList.add("rounded-circle");
+        profileImage.style.width="50px";
+        profileImage.style.height="50px";
+        profileImage.setAttribute("src",dbShare[i].ProfileImage!=undefined?dbShare[i].ProfileImage:"../img/default.jpeg");
+        let headInfo=document.createElement("h1");
+        headInfo.classList.add("d-inline-block","fs-6","mt-3","px-3")
+        let nameParagraf=document.createElement("p");
+        nameParagraf.classList.add("mb-1");
+        nameParagraf.innerText=dbShare[i].Name;
+        let locationParagraph=document.createElement("p");
+        locationParagraph.innerText=dbShare[i].Location;
+        headInfo.append(nameParagraf,locationParagraph);
+        let priceHeadling=document.createElement("h3");
+        priceHeadling.classList.add("fs-6","d-inline-block");
+        priceHeadling.innerText=dbShare[i].imagePrice;
+        InfoDiv.append(profileImage,headInfo,priceHeadling);
+
+        //second Image
+
+        let shareImage=document.createElement("img");
+        shareImage.classList.add("card-img-top","rounded-4","mb-3","border","border-1","border-black");
+        shareImage.setAttribute("src",dbShare[i].ShareImage);
+        shareImage.style.width="100%";
+        shareImage.style.height="200px";
+        let likeAndSaveDiv=document.createElement("div");
+        likeAndSaveDiv.classList.add("d-flex","justify-content-between","px-4");
+
+        let likeSpan=document.createElement("span");
+        likeSpan.innerHTML='<i class="fa-regular fa-heart mx-1">';
+        let likeCountSpan=document.createElement("span");
+        likeCountSpan.innerText=dbShare[i].LikeCount;
+        likeSpan.append(likeCountSpan);
+
+        let saveSpan=document.createElement("span");
+        saveSpan.innerHTML='<i class="fa-solid fa-download mx-1">';
+        let saveCountSpan=document.createElement("span");
+        saveCountSpan.innerText=dbShare[i].SaveCount;
+        saveSpan.append(saveCountSpan);
+        let removeSpan=document.createElement("span");
+        let removeIcon=document.createElement("i");
+        
+        removeIcon.classList.add("fa-solid","fa-trash");
+        removeSpan.append(removeIcon);
+        removeIcon.addEventListener("click",()=>{
+            dbShare=dbShare.filter(item=>item!=dbShare[i])
+            SetLocalStorage(dbShare,"Share");
+            cardDiv.remove();
+            return;
+
+        })
+        likeAndSaveDiv.append(likeSpan,saveSpan,removeSpan);
+
+        let bodyDiv=document.createElement("div");
+        bodyDiv.classList.add("card-body");
+
+        let descriptionParagraf=document.createElement("p");
+        descriptionParagraf.innerText=dbShare[i].Description;
+
+        let tagParagraf=document.createElement("p");
+        tagParagraf.classList.add("card-text");
+        tagParagraf.innerText=dbShare[i].Tag;
+        bodyDiv.append(descriptionParagraf,tagParagraf);
+
+        cardDiv.append(InfoDiv,shareImage,likeAndSaveDiv,bodyDiv);
+        likeContent.append(cardDiv);
+    }
+}

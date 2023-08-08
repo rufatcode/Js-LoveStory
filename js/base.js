@@ -8,7 +8,7 @@ export function SetLocalStorage(data,dbName){
     localStorage.setItem(dbName,JSON.stringify(data));
 }
 export function CheckPassword(password){
-    if(password.length<6||password.length>16){
+    if(password.length<8||password.length>16){
         return null;
     }
     return password;
