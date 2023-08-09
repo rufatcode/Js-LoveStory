@@ -189,10 +189,14 @@ for (let i = 0; i < dbSignUp.length; i++) {
     }
 }
 let headInfoParagraf=document.querySelector("#headInfo p");
-headInfoParagraf.innerText=user==null?"":user.about==undefined?"":user.about;
-document.querySelector("#headInfo h1").innerText=user.Name+" "+user.SureName;
-document.querySelector("footer p").innerText=user.about;
-document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.setAttribute("href",`tel:${user.Phone}`);
-document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.setAttribute("href",`tel:${user.Email}`);
-document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.innerText="+994"+user.Phone;
-document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerText=user.Email;
+if (user!=null) {
+    headInfoParagraf.innerText=user.about==undefined?"":user.about;
+    document.querySelector("#headInfo h1").innerText=user.Name+" "+user.SureName;
+    document.querySelector("footer p").innerText=user.about==undefined?"":user.about;
+    document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.setAttribute("href",`tel:${user.Phone}`);
+    document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.setAttribute("href",`tel:${user.Email}`);
+    document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.innerText="+994"+user.Phone;
+    document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.innerText=user.Email;
+
+}
+
