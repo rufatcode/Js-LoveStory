@@ -40,6 +40,7 @@ let describtionInput=document.getElementById("describtionInput");
 let dbSignUp=CheckLocalStorage("signUp");
 let dbsignIn=CheckLocalStorage("signIn");
 let dbShare=CheckLocalStorage("Share");
+let dbLikeAndSave=CheckLocalStorage("LikeAndSave");
 let user=null;
 const Share={};
 for (let i = 0; i < dbSignUp.length; i++) {
@@ -85,10 +86,21 @@ shareBtn.addEventListener("click",function(){
     Share.Description=describtionInput.value,
     Share.LikeCount=0,
     Share.SaveCount=0,
-    Share.LikeClass="text-dark",
-    Share.SaveClass="text-dark",
+    Share.Id=dbShare.length;
+    for (let i = 0; i < dbSignUp.length; i++) {
+        const LikeAndSave={
+            Id:Share.Id,
+            Email:dbSignUp[i].Email,
+            LikeClass:"text-dark",
+            SaveClass:"text-dark",
+        };
+       
+        dbLikeAndSave.push(LikeAndSave);
+        
 
+    }
     dbShare.push(Share);
+    SetLocalStorage(dbLikeAndSave,"LikeAndSave");
     SetLocalStorage(dbShare,"Share");
     location.replace("../index.html")
 })

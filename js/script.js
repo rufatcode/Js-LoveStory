@@ -25,14 +25,17 @@ bar2.addEventListener("click",()=>{
         }
     }
 })
+let dbLikeAndSave=CheckLocalStorage("LikeAndSave");
 let dbShare=CheckLocalStorage("Share");
+let dbSignUp=CheckLocalStorage("signUp");
+let dbsignIn=CheckLocalStorage("signIn");
 let Card=document.getElementById("distiribution");
 for (let i = 0; i < dbShare.length; i++) {
     // first div js
     let cardDiv=document.createElement("div");
     cardDiv.classList.add("card","my-4","rounded-4","border-2","border-black");
     cardDiv.style.width="22rem";
-    cardDiv.style.maxHeight="550px";
+    cardDiv.style.maxHeight="450px";
     cardDiv.style.overflowY= "scroll";
     let InfoDiv=document.createElement("div");
     let profileImage=document.createElement("img");
@@ -65,24 +68,96 @@ for (let i = 0; i < dbShare.length; i++) {
     
     let likeSpan=document.createElement("span");
     let likeIcon=document.createElement("i");
-    likeIcon.addEventListener("click",()=>{
-        if (dbShare[i].LikeClass=="text-dark") {
-            dbShare[i].LikeClass="text-danger";
-            dbShare[i].LikeCount+=1;
-            SetLocalStorage(dbShare,"Share");
-            window.location.reload();
+    likeIcon.classList.add("fa-solid","fa-heart","mx-1");
+    for (let j = 0; j < dbLikeAndSave.length; j++) {
+        if (dbLikeAndSave[j].Email==dbsignIn[dbsignIn.length-1].Email) {
+            if (dbLikeAndSave[j].Id==dbShare[i].Id) {
+                
+                if (dbLikeAndSave[j].LikeClass=="text-dark") {
+                    likeIcon.classList.add("text-dark");
+                    likeIcon.classList.remove("text-danger");
+                }
+                else if (dbLikeAndSave[j].LikeClass=="text-danger") {
+                    likeIcon.classList.remove("text-dark");
+                    likeIcon.classList.add("text-danger");
+                }
+            }
         }
+    }
+    likeIcon.addEventListener("click",()=>{
+        for (let j = 0; j < dbLikeAndSave.length; j++) {
+            if (dbLikeAndSave[j].Email==dbsignIn[dbsignIn.length-1].Email) {
+                if (dbLikeAndSave[j].Id==dbShare[i].Id) {
+                    if (dbLikeAndSave[j].LikeClass=="text-dark") {
+                        dbLikeAndSave[j].LikeClass="text-danger";
+                        dbShare[i].LikeCount+=1;
+                        SetLocalStorage(dbShare,"Share");
+                        SetLocalStorage(dbLikeAndSave,"LikeAndSave");
+                        window.location.reload();
+                    }
+                    else if (dbLikeAndSave[j].LikeClass=="text-danger") {
+                        dbLikeAndSave[j].LikeClass="text-dark";
+                        dbShare[i].LikeCount-=1;
+                        SetLocalStorage(dbShare,"Share");
+                        SetLocalStorage(dbLikeAndSave,"LikeAndSave");
+                        window.location.reload();
+                    }
+                }
+            }
+        }
+        
         
     })
     
-    likeIcon.classList.add("fa-solid","fa-heart","mx-1",dbShare[i].LikeClass);
+    
     likeSpan.append(likeIcon);
     let likeCountSpan=document.createElement("span");
     likeCountSpan.innerText=dbShare[i].LikeCount;
     likeSpan.append(likeCountSpan);
 
     let saveSpan=document.createElement("span");
-    saveSpan.innerHTML='<i class="fa-solid fa-download mx-1">';
+    let saveIcon=document.createElement("i");
+    saveIcon.classList.add("fa-solid","fa-download","mx-1");
+    for (let j = 0; j < dbLikeAndSave.length; j++) {
+        if (dbLikeAndSave[j].Email==dbsignIn[dbsignIn.length-1].Email) {
+            if (dbLikeAndSave[j].Id==dbShare[i].Id) {
+                
+                if (dbLikeAndSave[j].SaveClass=="text-dark") {
+                    saveIcon.classList.add("text-dark");
+                    saveIcon.classList.remove("text-danger");
+                }
+                else if (dbLikeAndSave[j].SaveClass=="text-danger") {
+                    saveIcon.classList.remove("text-dark");
+                    saveIcon.classList.add("text-danger");
+                }
+            }
+        }
+    }
+    saveIcon.addEventListener("click",()=>{
+        for (let j = 0; j < dbLikeAndSave.length; j++) {
+            if (dbLikeAndSave[j].Email==dbsignIn[dbsignIn.length-1].Email&&dbShare[i].UserEmail!=dbsignIn[dbsignIn.length-1].Email) {
+                if (dbLikeAndSave[j].Id==dbShare[i].Id) {
+                    if (dbLikeAndSave[j].SaveClass=="text-dark") {
+                        dbLikeAndSave[j].SaveClass="text-danger";
+                        dbShare[i].SaveCount+=1;
+                        SetLocalStorage(dbShare,"Share");
+                        SetLocalStorage(dbLikeAndSave,"LikeAndSave");
+                        window.location.reload();
+                    }
+                    else if (dbLikeAndSave[j].SaveClass=="text-danger") {
+                        dbLikeAndSave[j].SaveClass="text-dark";
+                        dbShare[i].SaveCount-=1;
+                        SetLocalStorage(dbShare,"Share");
+                        SetLocalStorage(dbLikeAndSave,"LikeAndSave");
+                        window.location.reload();
+                    }
+                }
+            }
+        }
+        
+        
+    })
+    saveSpan.append(saveIcon);
     let saveCountSpan=document.createElement("span");
     saveCountSpan.innerText=dbShare[i].SaveCount;
     saveSpan.append(saveCountSpan);
@@ -104,8 +179,7 @@ for (let i = 0; i < dbShare.length; i++) {
     Card.append(cardDiv);
 }
 
-let dbSignUp=CheckLocalStorage("signUp");
-let dbsignIn=CheckLocalStorage("signIn");
+
 let user=null;
 
 for (let i = 0; i < dbSignUp.length; i++) {
