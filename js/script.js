@@ -189,7 +189,7 @@ for (let i = 0; i < dbSignUp.length; i++) {
     }
 }
 let headInfoParagraf=document.querySelector("#headInfo p");
-headInfoParagraf.innerText=user.about!=undefined?user.about:"";
+headInfoParagraf.innerText=user==null?"":user.about==undefined?"":user.about;
 document.querySelector("#headInfo h1").innerText=user.Name+" "+user.SureName;
 document.querySelector("footer p").innerText=user.about;
 document.querySelector("footer").lastElementChild.firstElementChild.nextElementSibling.setAttribute("href",`tel:${user.Phone}`);
